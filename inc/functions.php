@@ -1,21 +1,30 @@
 <?php
 
 function get_item_html($id, $item){
+
     $output = "<li><a href='#'><img src='"
         . $item["img"] . "' alt='"
         . $item["title"] . "' />"
         ."<p>View details</p>"
         . "</a></li>";
-        return $output;
+        
+    return $output;
 }
 
 function array_category($catalog, $category) {
-    $output = array()
-;
-foreach ($catalog as $id => $item) {
-    if (strtolower($category) == strtolower($item["category"])) {
-        $output[] = $id;
+
+    $output = array();
+
+    foreach ($catalog as $id => $item) {
+        if ($category ==null OR strtolower($category) == strtolower($item["category"])) {
+            $sort = $item["title"];
+            $sort = ltrim($sort, "The ");
+            $sort = ltrim($sort, "A ");
+            $sort = ltrim($sort, "And ");
+            $output[$id] = $sort;
     }
 }
-    return $output;
+    asort($output);
+
+    return array_keys($output);
 }
