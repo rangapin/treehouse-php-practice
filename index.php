@@ -1,4 +1,5 @@
 <?php
+
 include ("inc/data.php");
 include ("inc/functions.php");
 
@@ -6,7 +7,9 @@ $pageTitle = "Personal media library";
 $section = null;
 
 
-include("inc/header.php"); ?>
+include("inc/header.php"); 
+
+?>
 
 <div class="section catalog random">
 
@@ -25,4 +28,8 @@ include("inc/header.php"); ?>
 	</div>
 </div>
 
-<?php include("inc/footer.php"); ?>
+<?php 
+
+include("inc/footer.php"); 
+
+?>

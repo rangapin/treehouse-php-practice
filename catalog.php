@@ -1,4 +1,5 @@
 <?php 
+
 include ("inc/data.php");
 include ("inc/functions.php");
 
@@ -38,8 +39,7 @@ echo $pageTitle; ?>
 </h1>   
 
 <ul class="items">
-
-<?php $categories = array_category($catalog, $section);
+<?php $categories = array_category($catalog, $section); // call to function
 	    foreach ($categories as $id) {
 	        echo get_item_html($id, $catalog[$id]);
     }		
